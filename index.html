@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #333333;
+            color: aliceblue;
+        }
+
+        #select {
+            width: 100px;
+            border: solid aliceblue 1px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+
+        const app = document.getElementById('app');
+        let outputter1 = "Halloen";
+        let outputter2 = "Tekst1";
+        let outputter3 = "";
+        let selectedvar = "selected";
+
+        viewer();
+        function viewer(){
+            app.innerHTML = /*HTML*/`
+            <div> 
+                <div id="tekst1">${outputter2}</div>
+                <select name="test" id="select" onchange="ordvalg(this)">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                </select>
+                <div id="tekst2">${outputter1}</div>
+                <br/>
+                <br/>
+                <div onclick="ordklikker(this)">Valg2</div>
+                <br/>
+                <div onclick="ordklikker(this)">Valg1</div>
+            </div>`;
+        }
+
+
+        function ordvalg(x){
+            outputter1 = x.value;
+            viewer();
+        }
+        function ordklikker(x){
+            outputter2 = x.innerHTML;
+            viewer();
+        }
+
+        if()
+
+        // selectedVariableX hvor X er lik parameter X.value
+        // eller kanskje:
+        // IF (x.value = 1) selectedVariable1 = "selected";
+        //og forraen alle iffene kan man sette selectedVariable1, selectedVariable2, selectedVariable3, selectedVariable4 lik null.
+    </script>
+</body>
+</html>
+
